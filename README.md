@@ -1,3 +1,5 @@
+[kendo-dojo-hub (8).html](https://github.com/user-attachments/files/25398648/kendo-dojo-hub.8.html)
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1712,7 +1714,7 @@
 // PASSCODES — change these before sharing with your dojo!
 // ═══════════════════════════════════════════════════════════════════════════
 const PASSCODE_MEMBER  = '1726';   // share with all members
-const PASSCODE_TRUSTED = '2172';   // share with trusted members only  
+const PASSCODE_TRUSTED = '2172';   // share with editors only  
 const PASSCODE_ADMIN   = '8558';   // keep to yourself, Sensei!
 
 // ─── LOGIN STATE ──────────────────────────────────────────────────────────
@@ -1842,7 +1844,7 @@ let tempDocs      = [];
 let docTabMode    = 'link';
 let membersPanelOpen = false;
 
-const ROLES = { admin:'Admin', trusted:'Trusted Member', member:'Member' };
+const ROLES = { admin:'Admin', trusted:'Editor', member:'Member' };
 const TYPE_META = {
   class:      { label:'Regular Class',  css:'class',      icon:'⚔️' },
   tournament: { label:'Tournament',      css:'tournament', icon:'🏆' },
@@ -2008,7 +2010,7 @@ function renderMembersPanel() {
       </div>
       ${isAdmin ? `<div class="role-toggle">
         <button class="role-opt ${m.role==='member'?'active-member':''}" onclick="setMemberRole(${i},'member')">Member</button>
-        <button class="role-opt ${m.role==='trusted'?'active-trusted':''}" onclick="setMemberRole(${i},'trusted')">Trusted</button>
+        <button class="role-opt ${m.role==='trusted'?'active-trusted':''}" onclick="setMemberRole(${i},'trusted')">Editor</button>
         <button class="role-opt ${m.role==='admin'?'active-admin':''}"   onclick="setMemberRole(${i},'admin')">Admin</button>
       </div>
       <button class="btn-ghost" style="font-size:11px;padding:4px 8px;margin-left:8px" onclick="removeMember(${i})">✕</button>` : `<div style="font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:0.08em">${ROLES[m.role]}</div>`}
@@ -2053,7 +2055,7 @@ function openAddMemberModal() {
   }
   
   // Ask for role
-  const roleChoice = prompt('Assign role for ' + trimmed + ':\n1 = Member\n2 = Trusted\n3 = Admin', '1');
+  const roleChoice = prompt('Assign role for ' + trimmed + ':\n1 = Member\n2 = Editor\n3 = Admin', '1');
   let role = 'member';
   if (roleChoice === '2') role = 'trusted';
   else if (roleChoice === '3') role = 'admin';
