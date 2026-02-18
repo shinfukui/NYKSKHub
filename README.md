@@ -1,10 +1,8 @@
-[kendo-dojo-hub (3).html](https://github.com/user-attachments/files/25394218/kendo-dojo-hub.3.html)
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>New York Kenshinkai Hub</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
